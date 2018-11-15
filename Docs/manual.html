@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./manual.css">
+    <script src="./manual.js" type="text/javascript"></script>
+    <script>
+        window.addEventListener("load", function () {
+            var contents = {
+                "default": {
+                    "title": "AddresSound - Manual",
+                    "manual": "Manual",
+                    "notices": "Third Party Licenses",
+                    "top_to": "↑Top",
+                    "overview": "Overview",
+                    "system": "System Requirements",
+                    "usage": "Usage",
+                    "screen": "Screen",
+                    "procedure": "Procedure",
+                    "license": "License",
+                    "contact": "Contact",
+                    "overview_desc": `<p>This application observes changing the value of memory address that the selected process has.</p>
+                                    <p>This application do not have the feature that searches memory addresses. You need to prepare for a tool that can search memory addresses.</p>`,
+                    "system_desc": `Microsoft Windows 7 SP1 or later and <a href=\"https://www.microsoft.com/en-US/download/details.aspx?id=42643\" target=\"_blank\">.NET Framework 4.5.2 Runtime</a>`,
+                    "menu_bar": "Menubar",
+                    "manager_buttons": "Manager Buttons",
+                    "file": "File",
+                    "add_observers": "Add Observers From File",
+                    "add_observers_desc": "Add observers from saved file.",
+                    "save_observers": "Save Observers To File",
+                    "save_observers_desc": "Save all observers to file.",
+                    "recent": "Recent Files",
+                    "recent_desc": "Select a recent file.",
+                    "exit": "Exit",
+                    "exit_desc": "Exit this application.",
+                    "help": "Help",
+                    "manual_desc": "Open this manual.",
+                    "about": "About",
+                    "about_desc": "Display about dialog.",
+                    "process": "Process",
+                    "process_info": "Process Information",
+                    "process_info_desc": "Display the information of the selected process. If process is not selected, The following message will be displayed:<strong>Process is not selected.</strong>.",
+                    "select_process": "Select Process",
+                    "select_process_desc": "Select a process from dialog.",
+                    "add": "Add",
+                    "add_desc": "Add a new observer.",
+                    "remove": "Remove",
+                    "remove_desc": "Remove the selected observer. If observer does not exists, the button will be disabled.",
+                    "start_all": "Start All",
+                    "start_all_desc": "Start observing for all observers.",
+                    "stop_all": "Stop All",
+                    "stop_all_desc": "Stop observing for all observers.",
+                    "observer_list": "Observer List",
+                    "observer_list_desc": "<p>Display the observer list. You can select a observer from tabs.</p><p>If observer does not exist, the following message will be displayed:<strong>Observer does not exist.</strong>.</p>",
+                    "start": "Start",
+                    "start_desc": "<p>Start observing the captured area.</p><p>Every update interval, the value of memory address will be read.</p><p>\"Stop\" button will be enabled.</p>",
+                    "stop": "Stop",
+                    "stop_desc": "Stop observing the captured area. \"Start\" button will be enabled. ",
+                    "observer_title": "Title",
+                    "observer_title_desc": "Edit the title.",
+                    "address": "Address",
+                    "address_desc": "Enter a memory address. Max 16-digits.",
+                    "value_type": "Value Type",
+                    "value_type_desc": "Select a value type that is read from a memory address.",
+                    "update_interval": "Update Interval",
+                    "update_interval_desc": "Set the update interval from 10 to 9999 milliseconds for observer.",
+                    "notifier_list": "Notifier List",
+                    "notifier_list_desc": `Display notifier list.`,
+                    "priority_notifier": "Priority Enabled",
+                    "priority_notifier_desc": `<p>Toggle enabling priority or not.</p>
+                                               <p>If priority is enabled, notifiers will work the following:</p>
+                                               <p>The notifier of highest priority that is matched condition, it will work. </p>
+                                               <p>The others of lower priority will not work.</p>`,
+                    "add_notifier": "Add",
+                    "add_notifier_desc": "Add a notifier.",
+                    "remove_notifier": "Remove",
+                    "remove_notifier_desc": "Remove the selected notifier. If it is not selected, button is disabled.",
+                    "up_notifier": "Up Priority",
+                    "up_notifier_desc": "Up a priority of the selected notifier. If it is not selected, button is disabled.",
+                    "down_notifier": "Down Priority",
+                    "down_notifier_desc": "Down a priority of the selected notifier. If it is not selected, button is disabled.",
+                    "notifier_selector": "Notifier Selector",
+                    "notifier_selector_desc": `<p>Select the notifier by click an item.</p>
+                                               <p>If the item is unchecked, the selected notifier is disabled.</p>`,
+                    "condition": "Condition",
+                    "condition_desc": `Select a condition for the notification that the value of memory address is changed.`,
+                    "specified_value": "Specified Value",
+                    "specified_value_desc": "Set specified value from 0 to 18446744073709551615.",
+                    "notifier_sound": "Sounds",
+                    "notifier_sound_desc": `<p>Display sounds for notification.</p>
+                                            <p>"Add" button will add sound from wav files.</p>
+                                            <p>"Remove" button will remove the selected sound. If it is not selected, button is disabled.</p>
+                                            <p>"Play" button will play the selected sound. If it is not selected, button is disabled.</p>
+                                            <p>"Stop" button will stop the selected sound. If it is not selected, button is disabled.</p>`,
+                    "log": "Log",
+                    "log_desc": `<p>Display a log.</p>
+                                <p>"Save" button can save a log.</p>
+                                <p>"Clear" button can clear a log.</p>`,
+                    "procedure_1_1": "Click \"Select Process\" button.",
+                    "procedure_1_2": "Select a process then double-click it.",
+                    "procedure_2": "Add a observer by \"Add\" button.",
+                    "procedure_3": "Enter a memory address that you want to observe.",
+                    "procedure_4": "Set the title etc.",
+                    "procedure_5_1": "Add a notifier by \"Add\" button.",
+                    "procedure_5_2": "Edit the selected notifier.",
+                    "procedure_6": "Start obsering by \"Start\" button.",
+                    "procedure_7": "Stop obsering by \"Stop\" button.",
+                    "license_desc": `<p>This application sources are published at <a href="https://github.com/tkpphr/AddresSound">Github</a>.</p>
+                                     <p>This application licence is Apache 2.0 License.</p>
+                                     <p>See details at "LICENSE.txt".</p>
+                                     <p>This application uses third-party resources.</p>
+                                     <p>See details at <a href="notices.html">here</a>.</p>`
+                },
+                "ja": {
+                    "title": "AddresSound - マニュアル",
+                    "manual": "マニュアル",
+                    "notices": "サードパーティライセンス",
+                    "top_to": "↑トップ",
+                    "overview": "概要",
+                    "system": "動作環境",
+                    "usage": "利用方法",
+                    "screen": "画面説明",
+                    "procedure": "操作手順",
+                    "license": "ライセンス",
+                    "contact": "連絡先",
+                    "overview_desc": `<p>このアプリケーションは選択したプロセスのメモリアドレスの値の変動を監視します。</p>
+                                    <p>メモリアドレスをサーチする機能は実装していないので別途でツールを用意する必要があります。</p>`,
+                    "system_desc": `Microsoft Windows 7 SP1またはそれ以降のMicrosoft Windows及び<a href=\"https://www.microsoft.com/ja-JP/download/details.aspx?id=42643\" target=\"_blank\">.NET Framework 4.5.2 Runtime</a>`,
+                    "menu_bar": "メニューバー",
+                    "manager_buttons": "管理ボタン",
+                    "file": "ファイル",
+                    "add_observers": "ファイルからオブザーバーを追加",
+                    "add_observers_desc": "ファイルから保存したオブザーバーを追加します。",
+                    "save_observers": "オブザーバーをファイルに保存",
+                    "save_observers_desc": "すべてのオブザーバーをファイルに保存します。",
+                    "recent": "最近使ったファイル",
+                    "recent_desc": "最近使ったファイルを選択します。",
+                    "exit": "終了",
+                    "exit_desc": "アプリケーションを終了します。",
+                    "help": "ヘルプ",
+                    "manual_desc": "本マニュアルを表示します。",
+                    "about": "バージョン情報",
+                    "about_desc": "バージョン情報を表示します。",
+                    "process": "プロセス",
+                    "process_info": "プロセス情報",
+                    "process_info_desc": "選択されているプロセスの情報を表示します。選択されていない場合は、<strong>プロセスが選択されていません。</strong>を表示されます。",
+                    "select_process": "プロセス選択",
+                    "select_process_desc": "ダイアログからプロセスを選択します。",
+                    "add": "追加",
+                    "add_desc": "オブザーバーを新規追加します。",
+                    "remove": "削除",
+                    "remove_desc": "選択されているオブザーバーを削除します。オブザーバーがない場合は無効になっています。",
+                    "start_all": "一括開始",
+                    "start_all_desc": "すべてのオブザーバーで監視を開始します。",
+                    "stop_all": "一括停止",
+                    "stop_all_desc": "監視中のオブザーバーをすべて停止します。",
+                    "observer_list": "オブザーバー一覧",
+                    "observer_list_desc": "<p>オブザーバーの一覧を表示します。タブでオブザーバーを選択します。</p><p>オブザーバーがない場合は、<strong>オブザーバーがありません。</strong>と表示されます。</p>",
+                    "start": "開始",
+                    "start_desc": "<p>監視を開始します。</p><p>更新間隔毎にメモリアドレスの値の読取が行われます。</p><p>「停止」ボタンが有効になります。</p>",
+                    "stop": "停止",
+                    "stop_desc": "監視を停止します。「開始」ボタンが有効になります。",
+                    "observer_title": "タイトル",
+                    "observer_title_desc": "オブザーバーのタイトルを編集します。",
+                    "address": "アドレス",
+                    "address_desc": "メモリアドレスを入力します。最大16桁まで入力可能です。",
+                    "value_type": "読込値",
+                    "value_type_desc": "アドレスから読み込む値のタイプを選択します。",
+                    "update_interval": "更新間隔",
+                    "update_interval_desc": "監視の更新を行う間隔を10ミリ秒～9999ミリ秒の範囲で指定します。",
+                    "notifier_list": "通知条件一覧",
+                    "notifier_list_desc": `読み込まれる値の変動の通知条件のリストです。`,
+                    "priority_notifier": "優先度有効",
+                    "priority_notifier_desc": "<p>通知条件の優先度を有効にするかどうかを切り替えます。</p><p>優先度を有効にした場合、値の変動の時に上から順に一致したものを一つだけ通知するようになります。</p>",
+                    "add_notifier": "追加",
+                    "add_notifier_desc": "通知条件を追加します。",
+                    "remove_notifier": "削除",
+                    "remove_notifier_desc": "選択中の通知条件を削除します。選択されていない場合は無効になっています。",
+                    "up_notifier": "優先度上昇",
+                    "up_notifier_desc": "選択中の通知条件の優先度を上げます。選択されていない場合は無効になっています。",
+                    "down_notifier": "優先度下降",
+                    "down_notifier_desc": "選択中の通知条件の優先度を下げます。選択されていない場合は無効になっています。",
+                    "notifier_selector": "通知条件セレクタ",
+                    "notifier_selector_desc": `<p>項目をクリックすることで通知条件を選択できます。</p>
+                                               <p>優先度の横にあるチェックを外すとその項目の通知を無効にします。</p>`,
+                    "condition": "条件",
+                    "condition_desc": "値の変動における条件を選択します。",
+                    "specified_value": "指定値",
+                    "specified_value_desc": "0～18446744073709551615の範囲で指定します。",
+                    "notifier_sound": "通知音",
+                    "notifier_sound_desc": `<p>通知音の一覧です。</p>
+                                            <p>「追加」でwavファイルを選択します。</p>
+                                            <p>「削除」で選択中の通知音を削除します。選択されていない場合は無効になっています。</p>
+                                            <p>「再生」で選択中の通知音を再生します。選択されていない場合は無効になっています。</p>
+                                            <p>「停止」で選択中の通知音を停止します。選択されていない場合は無効になっています。</p>`,
+                    "log": "ログ",
+                    "log_desc": `<p>監視ログを表示します。</p>
+                                <p>「保存」ボタンで表示されているログを保存できます。</p>
+                                <p>「消去」ボタンで表示されているログを消去できます。</p>`,
+                    "procedure_1_1": "「プロセス選択」ボタンからプロセスの選択をします。",
+                    "procedure_1_2": "監視するプロセスを選択してダブルクリックします。",
+                    "procedure_2": "「追加」ボタンからオブザーバーを追加します。",
+                    "procedure_3": "監視するメモリアドレスを入力します。",
+                    "procedure_4": "タイトルや更新間隔などを設定します。",
+                    "procedure_5_1": "通知条件を追加します。",
+                    "procedure_5_2": "通知条件を編集します。",
+                    "procedure_6": "「開始」ボタンで監視を開始します。",
+                    "procedure_7": "「停止」ボタンで監視を停止します。",
+                    "license_desc": `<p>このアプリケーションのソースは、<a href="https://github.com/tkpphr/AddresSound">Github</a>にて公開しています。</p>
+                                     <p>このアプリケーションのライセンスは、Apache 2.0 Licenseです。</p>
+                                     <p>詳しくは同梱のLICENSE.txtをご覧ください。</p>
+                                     <p>このアプリケーションは、サードパーティ製の成果物を使用しています。</p>
+                                     <p>詳しくは<a href="notices.html">こちら</a>をご覧ください。</p>`
+                }
+            };
+            document.title = contents[getLanguage()]["title"];
+            localizeContents(contents);
+            localizeImages(["ja"]);
+            document.getElementById("screen_image").addEventListener("load", function (e) {
+                var img = e.currentTarget;
+                var clipRects = {
+                    "menu_bar": {
+                        name: {
+                            "default": contents["default"]["menu_bar"],
+                            "ja": contents["ja"]["menu_bar"]
+                        },
+                        x: 10, y: 32, width: 781, height: 22
+                    },
+                    "process": {
+                        name: {
+                            "default": contents["default"]["process"],
+                            "ja": contents["ja"]["process"]
+                        },
+                        x: 10, y: 54, width: 781, height: 65
+                    },
+                    "manager_buttons": {
+                        name: {
+                            "default": contents["default"]["manager_buttons"],
+                            "ja": contents["ja"]["manager_buttons"]
+                        },
+                        x: 10, y: 119, width: 781, height: 35
+                    },
+                    "observer_list": {
+                        name: {
+                            "default": contents["default"]["observer_list"],
+                            "ja": contents["ja"]["observer_list"]
+                        },
+                        x: 10, y: 154, width: 781, height: 567
+                    },
+                };
+                drawNavigationCanvas(img, document.getElementById("screen_canvas"), clipRects, function (key, clipRect) { jumpToURL("#" + key); });
+                Object.keys(clipRects).forEach(function (key) {
+                    drawClippedImage(img, document.getElementById(key + "_canvas"), clipRects[key]);
+                });
+                drawClippedImage(img, document.getElementById("process_info_canvas"), { x: 10, y: 54, width: 680, height: 65 });
+                drawClippedImage(img, document.getElementById("select_process_canvas"), { x: 690, y: 54, width: 97, height: 65 });
+                drawClippedImage(img, document.getElementById("start_canvas"), { x: 32, y: 220, width: 80, height: 26 });
+                drawClippedImage(img, document.getElementById("stop_canvas"), { x: 32, y: 256, width: 80, height: 26 });
+                drawClippedImage(img, document.getElementById("observer_title_canvas"), { x: 150, y: 200, width: 220, height: 30 });
+                drawClippedImage(img, document.getElementById("address_canvas"), { x: 150, y: 230, width: 220, height: 25 });
+                drawClippedImage(img, document.getElementById("value_type_canvas"), { x: 130, y: 255, width: 230, height: 27 });
+                drawClippedImage(img, document.getElementById("update_interval_canvas"), { x: 130, y: 282, width: 125, height: 30 });
+                drawClippedImage(img, document.getElementById("notifier_list_canvas"), { x: 10, y: 312, width: 378, height: 410 });
+                drawClippedImage(img, document.getElementById("priority_notifier_canvas"), { x: 25, y: 340, width: 118, height: 30 });
+                drawClippedImage(img, document.getElementById("add_notifier_canvas"), { x: 140, y: 340, width: 60, height: 30 });
+                drawClippedImage(img, document.getElementById("remove_notifier_canvas"), { x: 200, y: 340, width: 60, height: 30 });
+                drawClippedImage(img, document.getElementById("up_notifier_canvas"), { x: 258, y: 340, width: 55, height: 30 });
+                drawClippedImage(img, document.getElementById("down_notifier_canvas"), { x: 310, y: 340, width: 55, height: 30 });
+                drawClippedImage(img, document.getElementById("notifier_selector_canvas"), { x: 25, y: 375, width: 355, height: 112 });
+                drawClippedImage(img, document.getElementById("condition_canvas"), { x: 40, y: 507, width: 280, height: 28 });
+                drawClippedImage(img, document.getElementById("specified_value_canvas"), { x: 40, y: 535, width: 270, height: 28 });
+                drawClippedImage(img, document.getElementById("notifier_sound_canvas"), { x: 30, y: 563, width: 345, height: 135 });
+                drawClippedImage(img, document.getElementById("log_canvas"), { x: 385, y: 190, width: 400, height: 520 });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="top-menu">
+                <img class="logo" src="favicon.ico">
+                <a class="selected" href="manual.html" data-localize-content="manual"></a>
+                <a href="notices.html" data-localize-content="notices"></a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="side-bar">
+                <ul>
+                    <li><a href="#overview" data-localize-content="overview"></a></li>
+                    <li><a href="#system" data-localize-content="system"></a></li>
+                    <li>
+                        <a href="#usage" data-localize-content="usage"></a>
+                        <ul>
+                            <li>
+                                <a href="#screen" data-localize-content="screen"></a>
+                                <ul>
+                                    <li><a href="#menu_bar" data-localize-content="menu_bar"></a></li>
+                                    <li><a href="#process" data-localize-content="process"></a></li>
+                                    <li><a href="#manager_buttons" data-localize-content="manager_buttons"></a></li>
+                                    <li><a href="#observer_list" data-localize-content="observer_list"></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#procedure" data-localize-content="procedure"></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact" data-localize-content="contact"></a></li>
+                    <li><a href="#license" data-localize-content="license"></a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <section id="overview">
+                    <h1 data-localize-content="overview"></h1>
+                    <hr>
+                    <div data-localize-content="overview_desc"></div>
+                </section>
+                <section id="system">
+                    <h1 data-localize-content="system"></h1>
+                    <hr>
+                    <div data-localize-content="system_desc"></div>
+                </section>
+                <section id="usage">
+                    <h1 data-localize-content="usage"></h1>
+                    <hr>
+                    <section id="screen">
+                        <h2 data-localize-content="screen"></h2>
+                        <img id="screen_image" data-localize-image-name="screen.JPG" hidden>
+                        <canvas id="screen_canvas"></canvas>
+                        <section id="menu_bar">
+                            <h3 data-localize-content="menu_bar"></h3>
+                            <canvas id="menu_bar_canvas"></canvas>
+                            <section id="file">
+                                <h4 data-localize-content="file"></h4>
+                                <section id="add_observers">
+                                    <h5 data-localize-content="add_observers"></h5>
+                                    <p data-localize-content="add_observers_desc"></p>
+                                </section>
+                                <section id="save_observers">
+                                    <h5 data-localize-content="save_observers"></h5>
+                                    <p data-localize-content="save_observers_desc"></p>
+                                </section>
+                                <section id="recent">
+                                    <h5 data-localize-content="recent"></h5>
+                                    <p data-localize-content="recent_desc"></p>
+                                </section>
+                                <section id="exit">
+                                    <h5 data-localize-content="exit"></h5>
+                                    <p data-localize-content="exit_desc"></p>
+                                </section>
+                            </section>
+                            <section id="help">
+                                <h4 data-localize-content="help"></h4>
+                                <section id="manual">
+                                    <h5 data-localize-content="manual"></h5>
+                                    <p data-localize-content="manual_desc"></p>
+                                </section>
+                                <section id="about">
+                                    <h5 data-localize-content="about"></h5>
+                                    <p data-localize-content="about_desc"></p>
+                                    <img data-localize-image-name="about.JPG">
+                                </section>
+                            </section>
+                        </section>
+                        <section id="process">
+                            <h3 data-localize-content="process"></h3>
+                            <canvas id="process_canvas"></canvas>
+                            <section id="process_info">
+                                <h4 data-localize-content="process_info"></h4>
+                                <p data-localize-content="process_info_desc"></p>
+                                <canvas id="process_info_canvas"></canvas>
+                            </section>
+                            <section id="select_process">
+                                <h4 data-localize-content="select_process"></h4>
+                                <p data-localize-content="select_process_desc"></p>
+                                <canvas id="select_process_canvas"></canvas>
+                            </section>
+                        </section>
+                        <section id="manager_buttons">
+                            <h3 data-localize-content="manager_buttons"></h3>
+                            <canvas id="manager_buttons_canvas"></canvas>
+                            <section id="add">
+                                <h4 data-localize-content="add"></h4>
+                                <p data-localize-content="add_desc"></p>
+                            </section>
+                            <section id="remove">
+                                <h4 data-localize-content="remove"></h4>
+                                <p data-localize-content="remove_desc"></p>
+                            </section>
+                            <section id="start_all">
+                                <h4 data-localize-content="start_all"></h4>
+                                <p data-localize-content="start_all_desc"></p>
+                            </section>
+                            <section id="stop_all">
+                                <h4 data-localize-content="stop_all"></h4>
+                                <p data-localize-content="stop_all_desc"></p>
+                            </section>
+                            
+                        </section>
+                        <section id="observer_list">
+                            <h3 data-localize-content="observer_list"></h3>
+                            <p data-localize-content="observer_list_desc"></p>
+                            <canvas id="observer_list_canvas"></canvas>
+                            <section id="start">
+                                <h4 data-localize-content="start"></h4>
+                                <canvas id="start_canvas"></canvas>
+                                <p data-localize-content="start_desc"></p>
+                            </section>
+                            <section id="stop">
+                                <h4 data-localize-content="stop"></h4>
+                                <canvas id="stop_canvas"></canvas>
+                                <p data-localize-content="stop_desc"></p>
+                            </section>
+                            <section id="observer_title">
+                                <h4 data-localize-content="observer_title"></h4>
+                                <canvas id="observer_title_canvas"></canvas>
+                                <p data-localize-content="observer_title_desc"></p>
+                            </section>
+                            <section id="address">
+                                <h4 data-localize-content="address"></h4>
+                                <canvas id="address_canvas"></canvas>
+                                <p data-localize-content="address_desc"></p>
+                            </section>
+                            <section id="value_type">
+                                <h4 data-localize-content="value_type"></h4>
+                                <canvas id="value_type_canvas"></canvas>
+                                <p data-localize-content="value_type_desc"></p>
+                            </section>
+                            <section id="update_interval">
+                                <h4 data-localize-content="update_interval"></h4>
+                                <canvas id="update_interval_canvas"></canvas>
+                                <p data-localize-content="update_interval_desc"></p>
+                            </section>
+                            <section id="notifier_list">
+                                <h4 data-localize-content="notifier_list"></h4>
+                                <p data-localize-content="notifier_list_desc"></p>
+                                <canvas id="notifier_list_canvas"></canvas>
+                                <section id="priority_notifier">
+                                    <h5 data-localize-content="priority_notifier"></h5>
+                                    <canvas id="priority_notifier_canvas"></canvas>
+                                    <p data-localize-content="priority_notifier_desc"></p>
+                                </section>
+                                <section id="add_notifier">
+                                    <h5 data-localize-content="add_notifier"></h5>
+                                    <canvas id="add_notifier_canvas"></canvas>
+                                    <p data-localize-content="add_notifier_desc"></p>
+                                </section>
+                                <section id="remove_notifier">
+                                    <h5 data-localize-content="remove_notifier"></h5>
+                                    <canvas id="remove_notifier_canvas"></canvas>
+                                    <p data-localize-content="remove_notifier_desc"></p>
+                                </section>
+                                <section id="up_notifier">
+                                    <h5 data-localize-content="up_notifier"></h5>
+                                    <canvas id="up_notifier_canvas"></canvas>
+                                    <p data-localize-content="up_notifier_desc"></p>
+                                </section>
+                                <section id="down_notifier">
+                                    <h5 data-localize-content="down_notifier"></h5>
+                                    <canvas id="down_notifier_canvas"></canvas>
+                                    <p data-localize-content="down_notifier_desc"></p>
+                                </section>
+                                <section id="notifier_selector">
+                                    <h5 data-localize-content="notifier_selector"></h5>
+                                    <canvas id="notifier_selector_canvas"></canvas>
+                                    <div data-localize-content="notifier_selector_desc"></div>
+                                </section>
+                                <section id="condition">
+                                    <h5 data-localize-content="condition"></h5>
+                                    <canvas id="condition_canvas"></canvas>
+                                    <div data-localize-content="condition_desc"></div>
+                                </section>
+                                <section id="specified_value">
+                                    <h5 data-localize-content="specified_value"></h5>
+                                    <canvas id="specified_value_canvas"></canvas>
+                                    <div data-localize-content="specified_value_desc"></div>
+                                </section>
+                                <section id="notifier_sound">
+                                    <h5 data-localize-content="notifier_sound"></h5>
+                                    <canvas id="notifier_sound_canvas"></canvas>
+                                    <div data-localize-content="notifier_sound_desc"></div>
+                                </section>
+                            </section>
+                            <section id="log">
+                                <h4 data-localize-content="log"></h4>
+                                <canvas id="log_canvas"></canvas>
+                                <p data-localize-content="log_desc"></p>
+                            </section>
+                        </section>
+                    </section>
+                    <section id="procedure">
+                        <h2 data-localize-content="procedure"></h2>
+                        <ol>
+                            <li>
+                                <p data-localize-content="procedure_1_1"></p>
+                                <img data-localize-image-name="procedure_1_1.JPG">
+                                <p data-localize-content="procedure_1_2"></p>
+                                <img data-localize-image-name="procedure_1_2.JPG">
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_2"></p>
+                                <div><img data-localize-image-name="procedure_2.JPG"></div>
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_3"></p>
+                                <img data-localize-image-name="procedure_3.JPG">
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_4"></p>
+                                <div><img data-localize-image-name="procedure_4.JPG"></div>
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_5_1"></p>
+                                <div><img data-localize-image-name="procedure_5_1.JPG"></div>
+                                <p data-localize-content="procedure_5_2"></p>
+                                <div><img data-localize-image-name="procedure_5_2.JPG"></div>
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_6"></p>
+                                <div><img data-localize-image-name="procedure_6_1.JPG"></div>
+                                <div><img data-localize-image-name="procedure_6_2.JPG"></div>
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_7"></p>
+                                <div><img data-localize-image-name="procedure_7_1.JPG"></div>
+                                <div><img data-localize-image-name="procedure_7_2.JPG"></div>
+                            </li>
+                        </ol>
+                    </section>
+                </section>
+                <section id="contact">
+                    <h1 data-localize-content="contact"></h1>
+                    <hr>
+                    <ul>
+                        <li>E-mail: <a href="mailto:tkpphr@gmail.com">tkpphr@gmail.com</a></li>
+                        <li>Github: <a href="https://github.com/tkpphr/">https://github.com/tkpphr/</a></li>
+                    </ul>
+                </section>
+                <section id="license">
+                    <h1 data-localize-content="license"></h1>
+                    <hr>
+                    <div data-localize-content="license_desc"></div>
+                </section>
+                <div class="right-aligned-wrapper margin-rb">
+                    <a href="#overview" data-localize-content="top_to"></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <span>Copyright (c) 2018 tkpphr. All rights reserved.</span>
+        </footer>
+    </div>
+
+</body>
+</html>
